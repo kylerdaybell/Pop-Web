@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+:root{
+  --seafoam: #6EFFBE;
+  --grey: #D4D4D4;
+  --dark-grey:#333;
+}
+
+
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+.App-header {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--dark-grey);
+}
+
+.nav li {
+  float: left;
+}
+
+
+.nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav li .home{
+  font-family: 'Kaushan Script', cursive;
+  color: var(--seafoam);
+}
+
+
+/* Change the link color to #111 (black) on hover */
+.nav li a:hover {
+  background-color: #111;
+  color:var(--seafoam);
+}
+
+.post{
+  padding:1vw;
+  background-color: var(--grey);
+  max-width: 100vw;
+  margin:auto;
+  text-align: center;
+}
+
+.post .title{
+  color:black;
+}
+
+.post .image{
+  max-width: 80%;
+}
+
+.text-seafoam{
+  color: var(--seafoam)!important;
+}
+
+.white{
+  background-color: white!important;
+}
+
+.text-white{
+  color:white!important;
+}
+
+.text-grey{
+  color:var(--grey)!important;
+}
+
+.darkgrey{
+  background-color:var(--dark-grey)!important;
+}
+
+.text-dark-grey{
+  color:var(--dark-grey)!important;
+}
+
+.text-black{
+  color:black!important;
+}
+
