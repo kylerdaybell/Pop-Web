@@ -1,8 +1,10 @@
 import React, { useEffect, useState, FunctionComponent } from "react";
 import logo from '../../Assets/Images/logo.png';
-import APIUserService from "../../Services/APIServices/APIUserService"
+import APIUserService from "../../Services/APIServices/APIUserService";
+import APIPostService from "../../Services/APIServices/APIPostService"
 import User from '../../Models/UserModel';
 import Token from "../../Models/TokenModel";
+import Post from "../../Models/PostModel";
 
 const HomePage: FunctionComponent = props => {
     const [ThisToken, setThisToken] = useState(new Token(""));
@@ -12,7 +14,19 @@ const HomePage: FunctionComponent = props => {
     const HomePage = async() =>{
         await UserRegister();
         let token = await UserLogin();
-        await UserDelete(token);
+        await CreatePost(token);
+        //await UserDelete(token);
+    }
+
+    const CreatePost = async(token: Token) =>{
+        let post = new Post(0,0,"Kylers post","this is the content of kylers post")
+        let apipostservice = new APIPostService()
+        if(await apipostservice.Create(post,token)){
+            setDeleted("User Account Deleted") 
+        } else 
+        {
+            setDeleted("User Account Deleted Not Deleted")
+        }
     }
 
     const UserLogin = async() =>{

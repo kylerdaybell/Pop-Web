@@ -1,8 +1,7 @@
-import IAPIUserService from "./IAPIUserService";
 import User from "../../Models/UserModel";
 import Token from "../../Models/TokenModel";
 
-export default class APIUserService implements IAPIUserService{
+export default class APIUserService{
     readonly url = "http://206.189.218.168";
     public async Login(user: User) : Promise<Token|null> {
         try{
@@ -59,7 +58,6 @@ export default class APIUserService implements IAPIUserService{
         try{
             let newurl = this.url + "/DeleteAccount";
             let body = JSON.stringify({User:user});
-            console.error(token)
             let headers = { 
                 "Content-Type": "application/json" ,
                 "Authorization": "Bearer "+token.key
